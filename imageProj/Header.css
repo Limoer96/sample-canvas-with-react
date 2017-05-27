@@ -1,0 +1,21 @@
+.container {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    background-color: grey;
+}
+
+.brand{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-style: italic;
+}
+.time{
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+

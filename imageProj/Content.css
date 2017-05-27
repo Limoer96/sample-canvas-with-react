@@ -1,0 +1,33 @@
+.contentContainer {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    margin-top: 10px;
+    left: 5px;
+    width: 600px;
+    border: 1px solid;
+}
+.btn{
+    border: 1px solid;
+    width: 100%;
+}
+.file{
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+}
+.file_container{
+    position: relative;
+    margin-right: 40px;
+    display: inline-block;
+    height: 10px;
+    width: 70px;
+    border: 1px solid;
+    margin: 5px 10px;
+    background-color: lightgray;
+    text-decoration: none;
+    color: #000000
+}
+.span{
+    float: left;
+}
