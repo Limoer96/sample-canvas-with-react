@@ -1,0 +1,41 @@
+.toolContainer {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    left: 660px;
+    top: -472px;
+    width: 400px;
+    font-size: 16px;
+    border: 2px solid grey;
+    box-shadow: 2px 2px 2px grey;
+    border-radius: 2px;
+}
+
+.range{
+    width: 200px;
+}
+
+.label{
+    position: relative;
+    margin:0 20px 0 5px;
+    line-height: 40px;
+}
+
+.li_each{
+    width: 300px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    background-color: lightgreen;   
+    list-style: none;
+    margin-top: 5px;
+    border-radius: 2px 2px;
+    box-shadow: 1px 1px 1px rgba(255, 255, 0, 0.2);
+}
+
+.show_right {
+    position: relative;
+    bottom: -8px;
+    right: 10px;
+    float: right;
+}

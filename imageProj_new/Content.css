@@ -1,0 +1,62 @@
+.contentContainer {
+    position: relative;
+    margin: 10px 0;
+    padding: 0;
+    left: 5px;
+    width: 600px;
+    border: 2px solid grey;
+    box-shadow: 1px 1px 1px lightgray;
+}
+
+.btnContainer {
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid;
+}
+
+.selectContainer {
+    position: relative;
+    margin: 5px 0 5px 5px;
+    background: #2fcc1f;
+    width: 100px;
+    height: 40px;
+    opacity: 0.7;
+    text-align: center;
+    border-radius: 2px 2px;
+    box-shadow: 2px 2px 1px lightgrey;
+}
+
+.notice{
+    text-align: center;
+    font-size: 15px;
+    position: absolute;
+    line-height: 40px;
+    z-index: -1;
+    left: 18px;
+}
+
+.select {
+    display: block;
+    height: 40px;
+    width: 100px;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+}
+
+.save{
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    padding: 0;
+    top: 412px;
+    left: 150px;
+    background-color: #2fcc1f;
+    opacity: 0.7;
+    border: none;
+    border-radius: 2px 2px;
+    box-shadow: 2px 2px 1px lightgrey;
+    font-size: 15px;
+}

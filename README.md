@@ -7,3 +7,14 @@
 2. 运行 npm init;
 3. 运行npm run build;
 3. 在chrome浏览器中打开index.html。
+
+### 5.28更新
+
+1. 解决了再次选择图片工具栏初始化的问题
+2. 修改工具栏的精度到0.01
+3. 页面的部分优化
+
+新的源代码见imageProj_new文件件，如需运行需要修改webpack.config.js入口文件。
+
+现在看起来像这样:
+![更新后的页面](http://olro3ke8a.bkt.clouddn.com/new.png)
