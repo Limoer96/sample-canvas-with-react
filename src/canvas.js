@@ -58,8 +58,17 @@ export function changeOpcity(canvas, ctx, opcity, r, g, b, style) {
     ctx.putImageData(image, 0, 0);
 }
 
-export function saveImage(canvas){
-    let dataurl = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+export function saveImage(canvas, img, state){
+    // 为了得到同像素的质量的canvas，我们需要进行改造，使用离屏canvas来解决问题
+    let canvas_full = document.createElement('canvas');
+    canvas_full.width = img.width;
+    canvas_full.height = img.height;
+    let ctx = canvas_full.getContext('2d'); 
+    let { opcity, r, g, b, style } = state;
+    ctx.drawImage(img, 0, 0, img.width, img.height); 
+    changeOpcity(canvas_full, ctx, opcity, r, g, b, style);
+// 这些步骤是十分费时的，但是目前没有找到更好的纯前端实现方式
+    let dataurl = canvas_full.toDataURL('image/png').replace('image/png', 'image/octet-stream');
     let a = document.createElement('a');
     a.href = dataurl;
     a.target = '_blank';

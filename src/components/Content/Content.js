@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { makeToDefault } from '../../Actions';
+import { drawImage, changeOpcity, saveImage, drawBackground } from '../../canvas';
 import style from './Content.css';
-import { drawImage, changeOpcity, saveImage, drawBackground } from './canvas.js';
-export default class Content extends Component {
+
+class Content extends Component {
     constructor( props ) {
         super( props );
     }
@@ -31,8 +35,10 @@ export default class Content extends Component {
         changeOpcity(canvas, ctx, state.opcity, state.r, state.g, state.b, state._style);
     }
     save(){
+        let { state } = this.props;
         let canvas = this.refs.canvas;
-        saveImage(canvas);
+        let img = this.refs.image;
+        saveImage(canvas, img, state);
     }
     getFileInfo(e){
         let FileReader = window.FileReader;
@@ -50,20 +56,42 @@ export default class Content extends Component {
         setTimeout(() => {
             this.initialImage();
         }, 500);
-        
+        return this.props.makeToDefault();
     }
     render() {
         return (
             <div className={style.contentContainer}> 
-                <canvas  ref='canvas' width="600px" height="400px">
-                    不支持canvas
+                <canvas ref='canvas' width="600px" height="400px" draggable={true}>
+                    你的浏览器不支持Canvas
                 </canvas>
-                <div className={style.btn}>
-                    <input type="file" onChange={this.getFileInfo.bind(this)} accept='image/png, image/jpeg, image/gif'/>
-                    <button onClick={this.save.bind(this)}>保存到本地</button>
+
+                <div className={style.btnContainer}>
+                    <p className={style.selectContainer}>
+                        <span className={style.notice}>选择文件</span>
+                        <input className={style.select} type="file"  onChange={this.getFileInfo.bind(this)} accept='image/png, image/jpeg, image/gif'/>
+                    </p>
+                    <button className={style.save} onClick={this.save.bind(this)}>保存到本地</button>
                 </div>
                 <img style={{display: 'none'}} ref='image' />
             </div>
         )
     }
 }
+
+Content.propTypes = {
+    state: PropTypes.object.isRequired,
+    makeToDefault: PropTypes.func.isRequired
+}
+
+function mapStateToProps(state) {
+    return {
+        state: state
+    }
+}
+
+export default connect(mapStateToProps, { makeToDefault })(Content);
+
+
+
+
+

@@ -6,9 +6,11 @@
     width: 600px;
     border: 2px solid grey;
     box-shadow: 1px 1px 1px lightgray;
+    overflow: auto;
 }
 
 .btnContainer {
+    position: relative;
     margin: 0;
     padding: 0;
     border-top: 2px solid;
@@ -16,7 +18,7 @@
 
 .selectContainer {
     position: relative;
-    margin: 5px 0 5px 5px;
+    margin: 20px 0 5px 5px;
     background: #2fcc1f;
     width: 100px;
     height: 40px;
@@ -51,7 +53,7 @@
     width: 100px;
     height: 40px;
     padding: 0;
-    top: 412px;
+    top: 20px;
     left: 150px;
     background-color: #2fcc1f;
     opacity: 0.7;

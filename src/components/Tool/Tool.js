@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { changeR, changeG, changeB, changeOpcity, changeStyle } from '../../Actions'; 
 import style from './Tool.css';
-export default class ToolBar extends Component {
+class ToolBar extends Component {
     constructor( props ) {
         super( props );
     }
@@ -60,3 +63,30 @@ export default class ToolBar extends Component {
         )
     }
 }
+
+ToolBar.propTypes = {
+    state: PropTypes.object.isRequired,
+    cr: PropTypes.func.isRequired,
+    cb: PropTypes.func.isRequired,
+    cg: PropTypes.func.isRequired,
+    copcity: PropTypes.func.isRequired,
+    cstyle: PropTypes.func.isRequired
+}
+
+function mapStateToProps(state) {
+    return {
+        state: state
+    }
+}
+
+const mapDispatchToProps = {
+    cr: changeR,
+    cb: changeB,
+    cg: changeG,
+    cstyle: changeStyle,
+    copcity: changeOpcity
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToolBar);
+
+
